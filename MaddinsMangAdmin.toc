@@ -1,0 +1,5 @@
+## Author: Martin Riedl
+## Interface: 30000
+## Title: MaddinsMangAdmin
+## Version: 2010.02.28
+Frame.xml
