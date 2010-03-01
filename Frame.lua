@@ -1,7 +1,7 @@
 ﻿SLASH_MANGADMIN1 = "/maddinsmangadmin";
 -- use "/mangadmin debug" for debug-informations
 
-version = "2010.02.28";
+version = "2010.03.01";
 debugFlag = false;
 
 SlashCmdList["MANGADMIN"] = function(msg)
@@ -37,22 +37,26 @@ function hideAllTabs()
 	TabServer:Hide();
 	
 	-- enable all buttons
-	ButtonTabGeneral:Enable();
-	ButtonTabServer:Enable();
+	-- ButtonTabGeneral:Enable();
+	-- ButtonTabServer:Enable();
+	PanelTemplates_DeselectTab(ButtonTabGeneral);
+	PanelTemplates_DeselectTab(ButtonTabServer);
 	alert("all tabs are now hidden");
 end
 
 function ButtonTabGeneral_OnClick()
 	hideAllTabs();
 	TabGeneral:Show();
-	ButtonTabGeneral:Disable();
+	-- ButtonTabGeneral:Disable();
+	PanelTemplates_SelectTab(ButtonTabGeneral);
 	alert("show tab general ready");
 end
 
 function ButtonTabServer_OnClick()
 	hideAllTabs();
 	TabServer:Show();
-	ButtonTabServer:Disable();
+	-- ButtonTabServer:Disable();
+	PanelTemplates_SelectTab(ButtonTabServer);
 	alert("show tab server");
 end
 

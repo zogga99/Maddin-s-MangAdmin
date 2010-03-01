@@ -29,31 +29,37 @@
 					</Anchor>
 				</Anchors>
 				<Frames>
-					<Button name="ButtonTabGeneral" inherits="UIPanelButtonTemplate" text="Allgemein">
+					<Button name="ButtonTabGeneral" inherits="TabButtonTemplate" text="Allgemein">
 						<Size>
 							<AbsDimension x="100" y="23" />
 						</Size>
 						<Anchors>
 							<Anchor point="TOPLEFT">
-								<Offset x="0" y="0" />
+								<Offset x="0" y="30" />
 							</Anchor>
 						</Anchors>
 						<Scripts>
+							<OnLoad>
+								PanelTemplates_TabResize(self, 0);
+							</OnLoad>
 							<OnClick>
 								ButtonTabGeneral_OnClick()
 							</OnClick>
 						</Scripts>
 					</Button>
-					<Button name="ButtonTabServer" inherits="UIPanelButtonTemplate" text="Server">
+					<Button name="ButtonTabServer" inherits="TabButtonTemplate" text="Server">
 						<Size>
 							<AbsDimension x="100" y="23" />
 						</Size>
 						<Anchors>
 							<Anchor point="TOPLEFT">
-								<Offset x="105" y="0" />
+								<Offset x="105" y="30" />
 							</Anchor>
 						</Anchors>
 						<Scripts>
+							<OnLoad>
+								PanelTemplates_TabResize(self, 0);
+							</OnLoad>
 							<OnClick>
 								ButtonTabServer_OnClick()
 							</OnClick>
@@ -69,7 +75,7 @@
 				</Size>
 				<Anchors>
 					<Anchor point="TOPLEFT" relativePoint="TOPLEFT">
-						<Offset x="20" y="-50" />
+						<Offset x="20" y="-20" />
 					</Anchor>
 				</Anchors>
 				<Frames>
