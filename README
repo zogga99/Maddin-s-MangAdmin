@@ -1,3 +1,31 @@
 This is an addon for World Of Warcraft (WoW) to manage a Mangos-Server.
 
+Following mangos-revisions are supported:        9010 - 9482
+Following WoW-clients are supported:             3.x.x
+
+==========================================================================
+                    =============================
+                            HOW-TOs
+                    =============================
+==========================================================================
+                    =============================
+                        A) Installation
+                    =============================
+    1. Go to page http://github.com/zogga99/Maddin-s-MangAdmin and click
+       on the button "Download Source".
+    2. Choose "Zip" and save the file.
+    3. Now open the folder where you installed WoW.
+    4. Go then into the folder \interface\addons\ and create a new folder
+       called "MaddinsMangAdmin".
+    5. Copy all files of the downloaded zip into this folder.
+    6. Delete the zip-file.
+    7. Installation completed.
+==========================================================================
+                    =============================
+                        B) Using this addon
+                    =============================
+    1. Write "/maddinsmangadmin" into the chat.
+    2. That's all.
+==========================================================================
+
 Powered by Martin Riedl
