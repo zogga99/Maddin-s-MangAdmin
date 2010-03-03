@@ -1,10 +1,10 @@
-﻿SLASH_MANGADMIN1 = "/maddinsmangadmin";
--- use "/mangadmin debug" for debug-informations
+﻿SLASH_MADDINSMANGADMIN1 = "/maddinsmangadmin";
+-- use "/maddinsmangadmin debug" for debug-informations
 
-version = "2010.03.01";
+version = "2010.03.03";
 debugFlag = false;
 
-SlashCmdList["MANGADMIN"] = function(msg)
+SlashCmdList["MADDINSMANGADMIN"] = function(msg)
 	if msg == "debug" then
 		debugFlag = true;
 	else
@@ -21,6 +21,7 @@ function showMainFrame()
 	FontStringVersion:SetText("Version: "..version);
 	
 	ButtonHide.tooltipText = "Schließt das Fenster";
+	ButtonServerexit.tooltipText = "Beenden den Server sofort";
 	ButtonServerrestartCancel.tooltipText = "Bricht den Neustart des Servers ab";
 	ButtonServershutdownCancel.tooltipText = "Bricht das Herunterfahren des Servers ab";
 	
@@ -99,6 +100,11 @@ function ButtonServershutdown_OnClick()
 	
 	EditBoxServertime:SetText("");
 	EditBoxServertime:ClearFocus();
+end
+
+function ButtonServerexit_OnClick()
+	alert("server exit");
+	executeCommand(".server exit");
 end
 
 function ButtonServerrestartCancel_OnClick()

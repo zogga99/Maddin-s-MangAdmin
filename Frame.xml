@@ -159,6 +159,27 @@
 							</OnClick>
 						</Scripts>
 					</Button>
+					<Button name="ButtonServerexit" inherits="UIPanelButtonTemplate" text="Server beenden">
+						<Size>
+							<AbsDimension x="110" y="23" />
+						</Size>
+						<Anchors>
+							<Anchor point="TOPRIGHT">
+								<Offset x="-340" y="-50" />
+							</Anchor>
+						</Anchors>
+						<Scripts>
+							<OnEnter>
+								MouseOverShow(self);
+							</OnEnter>
+							<OnLeave>
+								MouseOverHide(self);
+							</OnLeave>
+							<OnClick>
+								ButtonServerexit_OnClick()
+							</OnClick>
+						</Scripts>
+					</Button>
 					<Button name="ButtonServerrestartCancel" inherits="UIPanelButtonTemplate" text="Neustart abbrechen">
 						<Size>
 							<AbsDimension x="150" y="23" />

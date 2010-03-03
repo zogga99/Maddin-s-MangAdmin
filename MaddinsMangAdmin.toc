@@ -1,5 +1,7 @@
 ## Author: Martin Riedl
 ## Interface: 30000
 ## Title: MaddinsMangAdmin
-## Version: 2010.03.01
+## Notes: Manages a mangos-server
+## Notes-deDE: Verwaltet einen Mangos-Server
+## Version: 2010.03.03
 Frame.xml
