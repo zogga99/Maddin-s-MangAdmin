@@ -30,286 +30,288 @@ Following WoW-clients are supported:             3.x.x
                     =============================
                             Commands
                     =============================
-    +----------------------------+-----------+
-    |Command                     |Implemented|
-    +----------------------------+-----------+
-    |account                     |           |
-    |account create              |           |
-    |account delete              |           |
-    |account lock                |           |
-    |account onlinelist          |           |
-    |account password            |           |
-    |account set addon           |           |
-    |account set gmlevel         |           |
-    |account set password        |           |
-    |additem                     |           |
-    |additemset                  |           |
-    |announce                    |    yes    |
-    |aura                        |           |
-    |ban account                 |           |
-    |ban character               |           |
-    |ban ip                      |           |
-    |baninfo account             |           |
-    |baninfo character           |           |
-    |baninfo ip                  |           |
-    |bank                        |           |
-    |banlist account             |           |
-    |banlist character           |           |
-    |banlist ip                  |           |
-    |cast                        |           |
-    |cast back                   |           |
-    |cast dist                   |           |
-    |cast self                   |           |
-    |cast target                 |           |
-    |character customize         |           |
-    |character delete            |           |
-    |character level             |           |
-    |character rename            |           |
-    |character reputation        |           |
-    |character titles            |           |
-    |combatstop                  |           |
-    |commands                    |           |
-    |cooldown                    |           |
-    |damage                      |           |
-    |debug anim                  |           |
-    |debug arena                 |           |
-    |debug bg                    |           |
-    |debug getvalue              |           |
-    |debug Mod32Value            |           |
-    |debug play cinematic        |           |
-    |debug play movie            |           |
-    |debug play sound            |           |
-    |debug setvalue              |           |
-    |debug update                |           |
-    |delticket                   |           |
-    |demorph                     |           |
-    |die                         |           |
-    |dismount                    |           |
-    |distance                    |           |
-    |event                       |           |
-    |event list                  |           |
-    |event start                 |           |
-    |event stop                  |           |
-    |explorecheat                |           |
-    |flusharenapoints            |           |
-    |gm |           |
-    |gm chat |           |
-    |gm fly |           |
-    |gm ingame |           |
-    |gm list |           |
-    |gm visible |           |
-    |go creature |           |
-    |go graveyard |           |
-    |go grid |           |
-    |go object |           |
-    |go taxinode |           |
-    |go trigger |           |
-    |go xy |           |
-    |go xyz |           |
-    |go zonexy |           |
-    |gobject add |           |
-    |gobject delete |           |
-    |gobject move |           |
-    |gobject near |           |
-    |gobject setphase |           |
-    |gobject target |           |
-    |gobject turn |           |
-    |goname |           |
-    |gps |           |
-    |groupgo |           |
-    |guid |           |
-    |guild create |           |
-    |guild delete |           |
-    |guild invite |           |
-    |guild rank |           |
-    |guild uninvite |           |
-    |help |           |
-    |hidearea |           |
-    |honor add |           |
-    |honor addkill |           |
-    |honor update |           |
-    |hover |           |
-    |instance listbinds |           |
-    |instance savedata |           |
-    |instance stats |           |
-    |instance unbind |           |
-    |itemmove |           |
-    |kick |           |
-    |learn |           |
-    |learn all |           |
-    |learn all_crafts |           |
-    |learn all_default |           |
-    |learn all_gm |           |
-    |learn all_lang |           |
-    |learn all_myclass |           |
-    |learn all_mypettalents |           |
-    |learn all_myspells |           |
-    |learn all_mytalents |           |
-    |learn all_recipes |           |
-    |levelup |           |
-    |linkgrave |           |
-    |list creature |           |
-    |list item |           |
-    |list object |           |
-    |list talents |           |
-    |loadscripts |           |
-    |lookup area |           |
-    |lookup creature |           |
-    |lookup event |           |
-    |lookup faction |           |
-    |lookup item |           |
-    |lookup itemset |           |
-    |lookup object |           |
-    |lookup player account |           |
-    |lookup player email |           |
-    |lookup player ip |           |
-    |lookup quest |           |
-    |lookup skill |           |
-    |lookup spell |           |
-    |lookup taxinode |           |
-    |lookup tele |           |
-    |lookup title |           |
-    |maxskill |           |
-    |modify arena |           |
-    |modify aspeed |           |
-    |modify bit |           |
-    |modify bwalk |           |
-    |modify drunk |           |
-    |modify energy |           |
-    |modify faction |           |
-    |modify fly |           |
-    |modify gender |           |
-    |modify honor                |           |
-    |modify hp                   |           |
-    |modify mana                 |           |
-    |modify money                |           |
-    |modify morph                |           |
-    |modify mount                |           |
-    |modify phase                |           |
-    |modify rage                 |           |
-    |modify rep                  |           |
-    |modify runicpower           |           |
-    |modify scale                |           |
-    |modify speed                |           |
-    |modify spell                |           |
-    |modify standstate           |           |
-    |modify swim                 |           |
-    |modify tp                   |           |
-    |movegens                    |           |
-    |mute                        |           |
-    |namego                      |           |
-    |neargrave                   |           |
-    |notify                      |    yes    |
-    |npc add                     |           |
-    |npc additem                 |           |
-    |npc addmove                 |           |
-    |npc addweapon               |           |
-    |npc allowmove               |           |
-    |npc changelevel             |           |
-    |npc delete                  |           |
-    |npc delitem                 |           |
-    |npc factionid               |           |
-    |npc flag                    |           |
-    |npc follow                  |           |
-    |npc info                    |           |
-    |npc move                    |           |
-    |npc name                    |           |
-    |npc playemote               |           |
-    |npc setdeathstate           |           |
-    |npc setmodel                |           |
-    |npc setmovetype             |           |
-    |npc setphase                |           |
-    |npc spawndist               |           |
-    |npc spawntime               |           |
-    |npc spawntime               |           |
-    |npc subname                 |           |
-    |npc tame                    |           |
-    |npc textemote               |           |
-    |npc unfollow                |           |
-    |npc whisper                 |           |
-    |npc yell                    |           |
-    |pdump load                  |           |
-    |pdump write                 |           |
-    |pinfo                       |           |
-    |quest add                   |           |
-    |quest complete              |           |
-    |quest remove                |           |
-    |quit                        |           |
-    |recall                      |           |
-    |reload all                  |           |
-    |reload all_achievement      |           |
-    |reload all_area             |           |
-    |reload all_eventai          |           |
-    |reload all_item             |           |
-    |reload all_locales          |           |
-    |reload all_loot             |           |
-    |reload all_npc              |           |
-    |reload all_quest            |           |
-    |reload all_scripts          |           |
-    |reload all_spell            |           |
-    |reload config               |           |
-    |repairitems                 |           |
-    |reset achievements          |           |
-    |reset all                   |           |
-    |reset honor                 |           |
-    |reset level                 |           |
-    |reset specs                 |           |
-    |reset spells                |           |
-    |reset stats                 |           |
-    |reset talents               |           |
-    |respawn                     |           |
-    |revive                      |           |
-    |save                        |           |
-    |saveall                     |           |
-    |send items                  |           |
-    |send mail                   |           |
-    |send message                |           |
-    |send money                  |           |
-    |server corpses              |           |
-    |server exit                 |    yes    |
-    |server idlerestart          |           |
-    |server idlerestart cancel   |           |
-    |server idleshutdown         |           |
-    |server idleshutdown cancel  |           |
-    |server info                 |           |
-    |server motd                 |    yes    |
-    |server plimit               |           |
-    |server restart              |    yes    |
-    |server restart cancel       |    yes    |
-    |server set loglevel         |           |
-    |server set motd             |    yes    |
-    |server shutdown             |    yes    |
-    |server shutdown cancel      |    yes    |
-    |setskill                    |           |
-    |showarea                    |           |
-    |start                       |           |
-    |taxicheat                   |           |
-    |tele                        |           |
-    |tele add                    |           |
-    |tele del                    |           |
-    |tele group                  |           |
-    |tele name                   |           |
-    |ticket                      |           |
-    |titles add                  |           |
-    |titles current              |           |
-    |titles remove               |           |
-    |titles setmask              |           |
-    |unaura                      |           |
-    |unban account               |           |
-    |unban character             |           |
-    |unban ip                    |           |
-    |unlearn                     |           |
-    |unmute                      |           |
-    |waterwalk                   |           |
-    |wchange                     |           |
-    |whispers                    |           |
-    |wp                          |           |
-    |wp add                      |           |
-    |wp export                   |           |
-    |wp import                   |           |
-    |wp modify                   |           |
-    |wp show                     |           |
-    +----------------------------+-----------+
+    20 of 276 implemented (7%).
+    
+            +----------------------------+-----------+
+            |Command                     |Implemented|
+            +----------------------------+-----------+
+            |account                     |           |
+            |account create              |           |
+            |account delete              |           |
+            |account lock                |           |
+            |account onlinelist          |           |
+            |account password            |           |
+            |account set addon           |           |
+            |account set gmlevel         |           |
+            |account set password        |           |
+            |additem                     |           |
+            |additemset                  |           |
+            |announce                    |    yes    |
+            |aura                        |           |
+            |ban account                 |           |
+            |ban character               |           |
+            |ban ip                      |           |
+            |baninfo account             |           |
+            |baninfo character           |           |
+            |baninfo ip                  |           |
+            |bank                        |           |
+            |banlist account             |           |
+            |banlist character           |           |
+            |banlist ip                  |           |
+            |cast                        |           |
+            |cast back                   |           |
+            |cast dist                   |           |
+            |cast self                   |           |
+            |cast target                 |           |
+            |character customize         |           |
+            |character delete            |           |
+            |character level             |           |
+            |character rename            |           |
+            |character reputation        |           |
+            |character titles            |           |
+            |combatstop                  |           |
+            |commands                    |           |
+            |cooldown                    |           |
+            |damage                      |           |
+            |debug anim                  |           |
+            |debug arena                 |           |
+            |debug bg                    |           |
+            |debug getvalue              |           |
+            |debug Mod32Value            |           |
+            |debug play cinematic        |           |
+            |debug play movie            |           |
+            |debug play sound            |           |
+            |debug setvalue              |           |
+            |debug update                |           |
+            |delticket                   |           |
+            |demorph                     |           |
+            |die                         |           |
+            |dismount                    |           |
+            |distance                    |           |
+            |event                       |           |
+            |event list                  |           |
+            |event start                 |           |
+            |event stop                  |           |
+            |explorecheat                |           |
+            |flusharenapoints            |           |
+            |gm                          |           |
+            |gm chat                     |           |
+            |gm fly                      |           |
+            |gm ingame                   |           |
+            |gm list                     |           |
+            |gm visible                  |           |
+            |go creature                 |           |
+            |go graveyard                |           |
+            |go grid                     |           |
+            |go object                   |           |
+            |go taxinode                 |           |
+            |go trigger                  |           |
+            |go xy                       |           |
+            |go xyz                      |           |
+            |go zonexy                   |           |
+            |gobject add                 |           |
+            |gobject delete              |           |
+            |gobject move                |           |
+            |gobject near                |           |
+            |gobject setphase            |           |
+            |gobject target              |           |
+            |gobject turn                |           |
+            |goname                      |           |
+            |gps                         |           |
+            |groupgo                     |           |
+            |guid                        |           |
+            |guild create                |           |
+            |guild delete                |           |
+            |guild invite                |           |
+            |guild rank                  |           |
+            |guild uninvite              |           |
+            |help                        |           |
+            |hidearea                    |           |
+            |honor add                   |           |
+            |honor addkill               |           |
+            |honor update                |           |
+            |hover                       |           |
+            |instance listbinds          |           |
+            |instance savedata           |           |
+            |instance stats              |           |
+            |instance unbind             |           |
+            |itemmove                    |           |
+            |kick                        |           |
+            |learn                       |           |
+            |learn all                   |           |
+            |learn all_crafts            |           |
+            |learn all_default           |           |
+            |learn all_gm                |           |
+            |learn all_lang              |           |
+            |learn all_myclass           |           |
+            |learn all_mypettalents      |           |
+            |learn all_myspells          |           |
+            |learn all_mytalents         |           |
+            |learn all_recipes           |           |
+            |levelup                     |           |
+            |linkgrave                   |           |
+            |list creature               |           |
+            |list item                   |           |
+            |list object                 |           |
+            |list talents                |           |
+            |loadscripts                 |           |
+            |lookup area                 |           |
+            |lookup creature             |           |
+            |lookup event                |           |
+            |lookup faction              |           |
+            |lookup item                 |           |
+            |lookup itemset              |           |
+            |lookup object               |           |
+            |lookup player account       |           |
+            |lookup player email         |           |
+            |lookup player ip            |           |
+            |lookup quest                |           |
+            |lookup skill                |           |
+            |lookup spell                |           |
+            |lookup taxinode             |           |
+            |lookup tele                 |           |
+            |lookup title                |           |
+            |maxskill                    |           |
+            |modify arena                |           |
+            |modify aspeed               |           |
+            |modify bit                  |           |
+            |modify bwalk                |           |
+            |modify drunk                |           |
+            |modify energy               |           |
+            |modify faction              |           |
+            |modify fly                  |           |
+            |modify gender               |           |
+            |modify honor                |           |
+            |modify hp                   |           |
+            |modify mana                 |           |
+            |modify money                |           |
+            |modify morph                |           |
+            |modify mount                |           |
+            |modify phase                |           |
+            |modify rage                 |           |
+            |modify rep                  |           |
+            |modify runicpower           |           |
+            |modify scale                |           |
+            |modify speed                |           |
+            |modify spell                |           |
+            |modify standstate           |           |
+            |modify swim                 |           |
+            |modify tp                   |           |
+            |movegens                    |           |
+            |mute                        |           |
+            |namego                      |           |
+            |neargrave                   |           |
+            |notify                      |    yes    |
+            |npc add                     |           |
+            |npc additem                 |           |
+            |npc addmove                 |           |
+            |npc addweapon               |           |
+            |npc allowmove               |           |
+            |npc changelevel             |           |
+            |npc delete                  |           |
+            |npc delitem                 |           |
+            |npc factionid               |           |
+            |npc flag                    |           |
+            |npc follow                  |           |
+            |npc info                    |           |
+            |npc move                    |           |
+            |npc name                    |           |
+            |npc playemote               |           |
+            |npc setdeathstate           |           |
+            |npc setmodel                |           |
+            |npc setmovetype             |           |
+            |npc setphase                |           |
+            |npc spawndist               |           |
+            |npc spawntime               |           |
+            |npc spawntime               |           |
+            |npc subname                 |           |
+            |npc tame                    |           |
+            |npc textemote               |           |
+            |npc unfollow                |           |
+            |npc whisper                 |           |
+            |npc yell                    |           |
+            |pdump load                  |           |
+            |pdump write                 |           |
+            |pinfo                       |           |
+            |quest add                   |           |
+            |quest complete              |           |
+            |quest remove                |           |
+            |quit                        |           |
+            |recall                      |           |
+            |reload all                  |    yes    |
+            |reload all_achievement      |    yes    |
+            |reload all_area             |    yes    |
+            |reload all_eventai          |    yes    |
+            |reload all_item             |    yes    |
+            |reload all_locales          |    yes    |
+            |reload all_loot             |    yes    |
+            |reload all_npc              |    yes    |
+            |reload all_quest            |    yes    |
+            |reload all_scripts          |    yes    |
+            |reload all_spell            |    yes    |
+            |reload config               |           |
+            |repairitems                 |           |
+            |reset achievements          |           |
+            |reset all                   |           |
+            |reset honor                 |           |
+            |reset level                 |           |
+            |reset specs                 |           |
+            |reset spells                |           |
+            |reset stats                 |           |
+            |reset talents               |           |
+            |respawn                     |           |
+            |revive                      |           |
+            |save                        |           |
+            |saveall                     |           |
+            |send items                  |           |
+            |send mail                   |           |
+            |send message                |           |
+            |send money                  |           |
+            |server corpses              |           |
+            |server exit                 |    yes    |
+            |server idlerestart          |           |
+            |server idlerestart cancel   |           |
+            |server idleshutdown         |           |
+            |server idleshutdown cancel  |           |
+            |server info                 |           |
+            |server motd                 |    yes    |
+            |server plimit               |           |
+            |server restart              |    yes    |
+            |server restart cancel       |    yes    |
+            |server set loglevel         |           |
+            |server set motd             |    yes    |
+            |server shutdown             |    yes    |
+            |server shutdown cancel      |    yes    |
+            |setskill                    |           |
+            |showarea                    |           |
+            |start                       |           |
+            |taxicheat                   |           |
+            |tele                        |           |
+            |tele add                    |           |
+            |tele del                    |           |
+            |tele group                  |           |
+            |tele name                   |           |
+            |ticket                      |           |
+            |titles add                  |           |
+            |titles current              |           |
+            |titles remove               |           |
+            |titles setmask              |           |
+            |unaura                      |           |
+            |unban account               |           |
+            |unban character             |           |
+            |unban ip                    |           |
+            |unlearn                     |           |
+            |unmute                      |           |
+            |waterwalk                   |           |
+            |wchange                     |           |
+            |whispers                    |           |
+            |wp                          |           |
+            |wp add                      |           |
+            |wp export                   |           |
+            |wp import                   |           |
+            |wp modify                   |           |
+            |wp show                     |           |
+            +----------------------------+-----------+
 ==========================================================================
 
 Powered by Martin Riedl
