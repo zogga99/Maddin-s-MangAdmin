@@ -1,6 +1,6 @@
 ﻿This is an addon for World Of Warcraft (WoW) to manage a Mangos-Server.
 
-Following mangos-revisions are supported:        9010 - 9379
+Following mangos-revisions are supported:        9710 - 9763
 Following WoW-clients are supported:             3.x.x
 
 ==========================================================================
@@ -51,47 +51,47 @@ Following WoW-clients are supported:             3.x.x
     |ban ip                      |           |
     |baninfo account             |           |
     |baninfo character           |           |
-    |baninfo ip |           |
-    |bank |           |
-    |banlist account |           |
-    |banlist character |           |
-    |banlist ip |           |
-    |cast |           |
-    |cast back |           |
-    |cast dist |           |
-    |cast self |           |
-    |cast target |           |
-    |character customize |           |
-    |character delete |           |
-    |character level |           |
-    |character rename |           |
-    |character reputation |           |
-    |character titles |           |
-    |combatstop |           |
-    |commands |           |
-    |cooldown |           |
-    |damage |           |
-    |debug anim |           |
-    |debug arena |           |
-    |debug bg |           |
-    |debug getvalue |           |
-    |debug Mod32Value |           |
-    |debug play cinematic |           |
-    |debug play movie |           |
-    |debug play sound |           |
-    |debug setvalue |           |
-    |debug update |           |
-    |delticket |           |
-    |demorph |           |
-    |die |           |
-    |dismount |           |
-    |distance |           |
-    |event |           |
-    |event list |           |
-    |event start |           |
-    |event stop |           |
-    |explorecheat |           |
-    |flusharenapoints |           |
+    |baninfo ip                  |           |
+    |bank                        |           |
+    |banlist account             |           |
+    |banlist character           |           |
+    |banlist ip                  |           |
+    |cast                        |           |
+    |cast back                   |           |
+    |cast dist                   |           |
+    |cast self                   |           |
+    |cast target                 |           |
+    |character customize         |           |
+    |character delete            |           |
+    |character level             |           |
+    |character rename            |           |
+    |character reputation        |           |
+    |character titles            |           |
+    |combatstop                  |           |
+    |commands                    |           |
+    |cooldown                    |           |
+    |damage                      |           |
+    |debug anim                  |           |
+    |debug arena                 |           |
+    |debug bg                    |           |
+    |debug getvalue              |           |
+    |debug Mod32Value            |           |
+    |debug play cinematic        |           |
+    |debug play movie            |           |
+    |debug play sound            |           |
+    |debug setvalue              |           |
+    |debug update                |           |
+    |delticket                   |           |
+    |demorph                     |           |
+    |die                         |           |
+    |dismount                    |           |
+    |distance                    |           |
+    |event                       |           |
+    |event list                  |           |
+    |event start                 |           |
+    |event stop                  |           |
+    |explorecheat                |           |
+    |flusharenapoints            |           |
     |gm |           |
     |gm chat |           |
     |gm fly |           |
@@ -151,6 +151,7 @@ Following WoW-clients are supported:             3.x.x
     |list creature |           |
     |list item |           |
     |list object |           |
+    |list talents |           |
     |loadscripts |           |
     |lookup area |           |
     |lookup creature |           |
@@ -176,27 +177,28 @@ Following WoW-clients are supported:             3.x.x
     |modify drunk |           |
     |modify energy |           |
     |modify faction |           |
+    |modify fly |           |
     |modify gender |           |
-    |modify honor |           |
-    |modify hp |           |
-    |modify mana |           |
-    |modify money |           |
-    |modify morph |           |
-    |modify mount |           |
-    |modify phase |           |
-    |modify rage |           |
-    |modify rep |           |
-    |modify runicpower |           |
-    |modify scale |           |
-    |modify speed |           |
-    |modify spell |           |
-    |modify standstate |           |
-    |modify swim |           |
-    |modify tp |           |
-    |movegens |           |
-    |mute |           |
-    |namego |           |
-    |neargrave |           |
+    |modify honor                |           |
+    |modify hp                   |           |
+    |modify mana                 |           |
+    |modify money                |           |
+    |modify morph                |           |
+    |modify mount                |           |
+    |modify phase                |           |
+    |modify rage                 |           |
+    |modify rep                  |           |
+    |modify runicpower           |           |
+    |modify scale                |           |
+    |modify speed                |           |
+    |modify spell                |           |
+    |modify standstate           |           |
+    |modify swim                 |           |
+    |modify tp                   |           |
+    |movegens                    |           |
+    |mute                        |           |
+    |namego                      |           |
+    |neargrave                   |           |
     |notify                      |    yes    |
     |npc add                     |           |
     |npc additem                 |           |
@@ -219,11 +221,13 @@ Following WoW-clients are supported:             3.x.x
     |npc setphase                |           |
     |npc spawndist               |           |
     |npc spawntime               |           |
+    |npc spawntime               |           |
     |npc subname                 |           |
     |npc tame                    |           |
     |npc textemote               |           |
     |npc unfollow                |           |
     |npc whisper                 |           |
+    |npc yell                    |           |
     |pdump load                  |           |
     |pdump write                 |           |
     |pinfo                       |           |
@@ -233,10 +237,15 @@ Following WoW-clients are supported:             3.x.x
     |quit                        |           |
     |recall                      |           |
     |reload all                  |           |
+    |reload all_achievement      |           |
     |reload all_area             |           |
+    |reload all_eventai          |           |
+    |reload all_item             |           |
     |reload all_locales          |           |
     |reload all_loot             |           |
+    |reload all_npc              |           |
     |reload all_quest            |           |
+    |reload all_scripts          |           |
     |reload all_spell            |           |
     |reload config               |           |
     |repairitems                 |           |
@@ -244,6 +253,7 @@ Following WoW-clients are supported:             3.x.x
     |reset all                   |           |
     |reset honor                 |           |
     |reset level                 |           |
+    |reset specs                 |           |
     |reset spells                |           |
     |reset stats                 |           |
     |reset talents               |           |
@@ -277,28 +287,28 @@ Following WoW-clients are supported:             3.x.x
     |tele                        |           |
     |tele add                    |           |
     |tele del                    |           |
-    |tele group |           |
-    |tele name |           |
-    |ticket |           |
-    |titles add |           |
-    |titles current |           |
-    |titles remove |           |
-    |titles setmask |           |
-    |unaura |           |
-    |unban account |           |
-    |unban character |           |
-    |unban ip |           |
-    |unlearn |           |
-    |unmute |           |
-    |waterwalk |           |
-    |wchange |           |
-    |whispers |           |
-    |wp |           |
-    |wp add |           |
-    |wp export |           |
-    |wp import |           |
-    |wp modify |           |
-    |wp show |           |
+    |tele group                  |           |
+    |tele name                   |           |
+    |ticket                      |           |
+    |titles add                  |           |
+    |titles current              |           |
+    |titles remove               |           |
+    |titles setmask              |           |
+    |unaura                      |           |
+    |unban account               |           |
+    |unban character             |           |
+    |unban ip                    |           |
+    |unlearn                     |           |
+    |unmute                      |           |
+    |waterwalk                   |           |
+    |wchange                     |           |
+    |whispers                    |           |
+    |wp                          |           |
+    |wp add                      |           |
+    |wp export                   |           |
+    |wp import                   |           |
+    |wp modify                   |           |
+    |wp show                     |           |
     +----------------------------+-----------+
 ==========================================================================
 

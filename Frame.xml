@@ -268,6 +268,42 @@
 							</OnClick>
 						</Scripts>
 					</Button>
+					<Button name="DropDownMenuTables" inherits="UIDropDownMenuTemplate">
+						<Size>
+							<AbsDimension x="100" y="23" />
+						</Size>
+						<Anchors>
+							<Anchor point="TOPLEFT">
+								<Offset x="100" y="-100" />
+							</Anchor>
+						</Anchors>
+						<Scripts>
+							<OnLoad>
+								UIDropDownMenu_Initialize(self, DropDownMenuTables_OnLoad);
+							</OnLoad>
+						</Scripts>
+					</Button>
+					<Button name="ButtonServerReload" inherits="UIPanelButtonTemplate" text="neu laden">
+						<Size>
+							<AbsDimension x="100" y="23" />
+						</Size>
+						<Anchors>
+							<Anchor point="TOPRIGHT">
+								<Offset x="0" y="-100" />
+							</Anchor>
+						</Anchors>
+						<Scripts>
+							<OnEnter>
+								MouseOverShow(self);
+							</OnEnter>
+							<OnLeave>
+								MouseOverHide(self);
+							</OnLeave>
+							<OnClick>
+								ButtonServerReload_OnClick()
+							</OnClick>
+						</Scripts>
+					</Button>
 				</Frames>
 				<Layers>
 					<Layer level="OVERLAY">
@@ -314,6 +350,18 @@
 							<Anchors>
 								<Anchor point="TOPLEFT">
 									<Offset x="0" y="-75" />
+								</Anchor>
+							</Anchors>
+						</FontString>
+					</Layer>
+					<Layer level="OVERLAY">
+						<FontString name="FontStringTable" inherits="GameFontNormal" justifyH="LEFT" text="Tabelle">
+							<Size>
+								<AbsDimension x="100" y="20" />
+							</Size>
+							<Anchors>
+								<Anchor point="TOPLEFT">
+									<Offset x="0" y="-100" />
 								</Anchor>
 							</Anchors>
 						</FontString>

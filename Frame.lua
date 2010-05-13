@@ -1,8 +1,55 @@
 ﻿SLASH_MADDINSMANGADMIN1 = "/maddinsmangadmin";
 -- use "/maddinsmangadmin debug" for debug-informations
 
-version = "2010.03.03";
+version = "2010.05.13";
 debugFlag = false;
+
+reloadTables = {
+	["01"] = {
+		["text"] = "all",
+		["command"] = ".reload all"
+	},
+	["02"] = {
+		["text"] = "achievement",
+		["command"] = ".reload all_achievement"
+	},
+	["03"] = {
+		["text"] = "area",
+		["command"] = ".reload all_area"
+	},
+	["04"] = {
+		["text"] = "eventai",
+		["command"] = ".reload all_eventai"
+	},
+	["05"] = {
+		["text"] = "item",
+		["command"] = ".reload all_item"
+	},
+	["06"] = {
+		["text"] = "locales",
+		["command"] = ".reload all_locales"
+	},
+	["07"] = {
+		["text"] = "loot",
+		["command"] = ".reload all_loot"
+	},
+	["08"] = {
+		["text"] = "npc",
+		["command"] = ".reload all_npc"
+	},
+	["09"] = {
+		["text"] = "quest",
+		["command"] = ".reload all_quest"
+	},
+	["10"] = {
+		["text"] = "scripts",
+		["command"] = ".reload all_scripts"
+	},
+	["11"] = {
+		["text"] = "spell",
+		["command"] = ".reload all_spell"
+	}
+};
 
 SlashCmdList["MADDINSMANGADMIN"] = function(msg)
 	if msg == "debug" then
@@ -24,6 +71,7 @@ function showMainFrame()
 	ButtonServerexit.tooltipText = "Beenden den Server sofort";
 	ButtonServerrestartCancel.tooltipText = "Bricht den Neustart des Servers ab";
 	ButtonServershutdownCancel.tooltipText = "Bricht das Herunterfahren des Servers ab";
+	ButtonServerReload.tooltipText = "Lädt die ausgewählte Tabelle(n) neu";
 	
 	alert("show frame ready");
 end
@@ -129,6 +177,26 @@ end
 function ButtonServerMotdShow_OnClick()
 	alert("show message of the day");
 	executeCommand(".server motd");
+end
+
+function DropDownMenuTables_OnLoad()
+	for key, subarray in pairs(reloadTables) do
+		info		= {};
+		info.text	= reloadTables[key].text;
+		info.value	= key;
+		info.func	= DropDownMenuTables_Selected
+		UIDropDownMenu_AddButton(info);
+	end
+end
+
+function DropDownMenuTables_Selected(element)
+	UIDropDownMenu_SetSelectedValue(DropDownMenuTables, element.value);
+end
+
+function ButtonServerReload_OnClick()
+	if UIDropDownMenu_GetSelectedValue(DropDownMenuTables) then
+		executeCommand(reloadTables[UIDropDownMenu_GetSelectedValue(DropDownMenuTables)].command);
+	end
 end
 
 function MouseOverShow(self)
