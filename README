@@ -249,7 +249,7 @@ Following WoW-clients are supported:             3.x.x
             |reload all_quest            |    yes    |
             |reload all_scripts          |    yes    |
             |reload all_spell            |    yes    |
-            |reload config               |           |
+            |reload config               |    yes    |
             |repairitems                 |           |
             |reset achievements          |           |
             |reset all                   |           |

@@ -108,6 +108,12 @@
 							</Anchor>
 						</Anchors>
 						<Scripts>
+							<OnEnter>
+								MouseOverShow(self);
+							</OnEnter>
+							<OnLeave>
+								MouseOverHide(self);
+							</OnLeave>
 							<OnClick>
 								ButtonServermessageSend_OnClick()
 							</OnClick>
@@ -139,6 +145,12 @@
 							</Anchor>
 						</Anchors>
 						<Scripts>
+							<OnEnter>
+								MouseOverShow(self);
+							</OnEnter>
+							<OnLeave>
+								MouseOverHide(self);
+							</OnLeave>
 							<OnClick>
 								ButtonServerrestart_OnClick()
 							</OnClick>
@@ -154,6 +166,12 @@
 							</Anchor>
 						</Anchors>
 						<Scripts>
+							<OnEnter>
+								MouseOverShow(self);
+							</OnEnter>
+							<OnLeave>
+								MouseOverHide(self);
+							</OnLeave>
 							<OnClick>
 								ButtonServershutdown_OnClick()
 							</OnClick>
@@ -248,6 +266,12 @@
 							</Anchor>
 						</Anchors>
 						<Scripts>
+							<OnEnter>
+								MouseOverShow(self);
+							</OnEnter>
+							<OnLeave>
+								MouseOverHide(self);
+							</OnLeave>
 							<OnClick>
 								ButtonServerMotdSave_OnClick()
 							</OnClick>
@@ -263,6 +287,12 @@
 							</Anchor>
 						</Anchors>
 						<Scripts>
+							<OnEnter>
+								MouseOverShow(self);
+							</OnEnter>
+							<OnLeave>
+								MouseOverHide(self);
+							</OnLeave>
 							<OnClick>
 								ButtonServerMotdShow_OnClick()
 							</OnClick>
@@ -285,7 +315,28 @@
 					</Button>
 					<Button name="ButtonServerReload" inherits="UIPanelButtonTemplate" text="neu laden">
 						<Size>
-							<AbsDimension x="100" y="23" />
+							<AbsDimension x="80" y="23" />
+						</Size>
+						<Anchors>
+							<Anchor point="TOPRIGHT">
+								<Offset x="-220" y="-100" />
+							</Anchor>
+						</Anchors>
+						<Scripts>
+							<OnEnter>
+								MouseOverShow(self);
+							</OnEnter>
+							<OnLeave>
+								MouseOverHide(self);
+							</OnLeave>
+							<OnClick>
+								ButtonServerReload_OnClick()
+							</OnClick>
+						</Scripts>
+					</Button>
+					<Button name="ButtonServerReloadConfigFile" inherits="UIPanelButtonTemplate" text="Konfigurationsdatei neu laden">
+						<Size>
+							<AbsDimension x="210" y="23" />
 						</Size>
 						<Anchors>
 							<Anchor point="TOPRIGHT">
@@ -300,7 +351,7 @@
 								MouseOverHide(self);
 							</OnLeave>
 							<OnClick>
-								ButtonServerReload_OnClick()
+								ButtonServerReloadConfigFile_OnClick()
 							</OnClick>
 						</Scripts>
 					</Button>
