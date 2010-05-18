@@ -2,7 +2,7 @@
 -- use "/maddinsmangadmin debug" for debug-informations
 -- use "/maddinsmangadmin debug_extended" for extended debug-informations
 
-version = "2010.05.14";
+version = "2010.05.18";
 debugFlag = 0;
 
 reloadTables = {
@@ -66,6 +66,53 @@ reloadTablesOrder = {
 	"spell"
 };
 
+AccountExtensions = {
+	["normal"] = {
+		["text"] = "Normal",
+		["command"] = "0"
+	},
+	["tbc"] = {
+		["text"] =  "The Burning Crusade",
+		["command"] = "1"
+	},
+	["wotlk"] = {
+		["text"] = "Wrath of the LichKing",
+		["command"] = "2"
+	}
+};
+
+AccountExtensionsOrder = {
+	"normal",
+	"tbc",
+	"wotlk"
+};
+
+AccountGmLevel = {
+	["0"] = {
+		["text"] = "0",
+		["command"] = "0"
+	},
+	["1"] = {
+		["text"] = "1",
+		["command"] = "1"
+	},
+	["2"] = {
+		["text"] = "2",
+		["command"] = "2"
+	},
+	["3"] = {
+		["text"] = "3",
+		["command"] = "3"
+	}
+};
+
+AccountGmLevelOrder = {
+	"0",
+	"1",
+	"2",
+	"3"
+};
+
 SlashCmdList["MADDINSMANGADMIN"] = function(msg)
 	if msg == "debug" then
 		debugFlag = 1;
@@ -86,6 +133,9 @@ function showMainFrame()
 	
 	ButtonHide.tooltipText = "Schließt das Fenster";
 	
+	ButtonAccountExtensionSave.tooltipText = "Speichert die ausgewählte Erweiterung";
+	ButtonAccountGmLevelShow.tooltipText = "Zeigt die aktuelle Berechtigungsstufe an";
+	
 	ButtonServermessageSend.tooltipText = "Sendet den eingegebenen Text an alle Spieler die gerade online sind";
 	ButtonServerrestart.tooltipText = "Startet den Server nach x Sekunden neu";
 	ButtonServerShutdown.tooltipText = "Fährt den Server nach x Sekunden herunter";
@@ -105,30 +155,108 @@ function ButtonHide_OnClick()
 end
 
 function hideAllTabs()
+	alert("hide all tabs", 1);
+	
 	-- hide all tabs
 	TabGeneral:Hide();
+	TabPlayer:Hide();
+	TabAccount:Hide();
 	TabServer:Hide();
 	
 	-- enable all tabs
 	PanelTemplates_DeselectTab(ButtonTabGeneral);
+	PanelTemplates_DeselectTab(ButtonTabPlayer);
+	PanelTemplates_DeselectTab(ButtonTabAccount);
 	PanelTemplates_DeselectTab(ButtonTabServer);
-	alert("all tabs are now hidden", 1);
 end
 
 function ButtonTabGeneral_OnClick()
+	alert("show tab general ready", 1);
 	hideAllTabs();
 	TabGeneral:Show();
 	PanelTemplates_SelectTab(ButtonTabGeneral);
-	alert("show tab general ready", 1);
+end
+
+function ButtonTabPlayer_OnClick()
+	alert("show tab player", 1);
+	hideAllTabs();
+	TabPlayer:Show();
+	PanelTemplates_SelectTab(ButtonTabPlayer);
+end
+
+function ButtonTabAccount_OnClick()
+	alert("show tab account", 1);
+	hideAllTabs();
+	TabAccount:Show();
+	PanelTemplates_SelectTab(ButtonTabAccount);
 end
 
 function ButtonTabServer_OnClick()
+	alert("show tab server", 1);
 	hideAllTabs();
 	TabServer:Show();
 	PanelTemplates_SelectTab(ButtonTabServer);
-	alert("show tab server", 1);
 end
 
+
+-- -----------------------------------------------------------------------
+--  Account
+-- -----------------------------------------------------------------------
+function DropDownMenuAccountExtension_OnLoad()
+	UIDropDownMenu_SetWidth(DropDownMenuAccountExtension, 150, 0);
+	for key, subarray in pairs(AccountExtensionsOrder) do
+		info		= {};
+		info.text	= AccountExtensions[AccountExtensionsOrder[key]].text;
+		info.value	= AccountExtensionsOrder[key];
+		info.func	= DropDownMenuAccountExtension_Selected;
+		UIDropDownMenu_AddButton(info);
+	end
+end
+
+function DropDownMenuAccountExtension_Selected(element)
+	UIDropDownMenu_SetSelectedValue(DropDownMenuAccountExtension, element.value);
+end
+
+function ButtonAccountExtensionSave_OnClick()
+	if UIDropDownMenu_GetSelectedValue(DropDownMenuAccountExtension) then
+		executeCommand(".account set addon "..AccountExtensions[UIDropDownMenu_GetSelectedValue(DropDownMenuAccountExtension)].command);
+	else
+		alert("no extension selected", 1);
+	end
+end
+
+
+--function DropDownMenuAccountGmLevel_OnLoad()
+--	UIDropDownMenu_SetWidth(DropDownMenuAccountGmLevel, 50, 0);
+--	for key, subarray in pairs(AccountGmLevelOrder) do
+--		info		= {};
+--		info.text	= AccountGmLevel[AccountGmLevelOrder[key]].text;
+--		info.value	= AccountGmLevelOrder[key];
+--		info.func	= DropDownMenuAccountGmLevel_Selected;
+--		UIDropDownMenu_AddButton(info);
+--	end
+--end
+
+--function DropDownMenuAccountGmLevel_Selected(element)
+--	UIDropDownMenu_SetSelectedValue(DropDownMenuAccountGmLevel, element.value);
+--end
+
+--function ButtonAccountGmLevelSave_OnClick()
+--	if UIDropDownMenu_GetSelectedValue(DropDownMenuAccountGmLevel) then
+--		executeCommand(".account set gmlevel "..AccountGmLevel[UIDropDownMenu_GetSelectedValue(DropDownMenuAccountGmLevel)].command);
+--	else
+--		alert("no gm level selected", 1);
+--	end
+--end
+
+function ButtonAccountGmLevelShow_OnClick()
+	alert("shows current extension level", 1);
+	executeCommand(".account");
+end
+
+-- -----------------------------------------------------------------------
+--  Server
+-- -----------------------------------------------------------------------
 function ButtonServermessageSend_OnClick()
 	if EditBoxServermessage:GetText() ~= "" then
 		alert("send server message", 1);
@@ -225,6 +353,10 @@ function ButtonServerReloadConfigFile_OnClick()
 	executeCommand(".reload config");
 end
 
+
+-- -----------------------------------------------------------------------
+--  Global Mouse Funcitons
+-- -----------------------------------------------------------------------
 function MouseOverShow(self)
 	alert("show mouveover", 2);
 	GameTooltip:SetOwner(self, "ANCHOR_RIGHT");
@@ -238,6 +370,10 @@ function MouseOverHide(self)
 	GameTooltip:Hide();
 end
 
+
+-- -----------------------------------------------------------------------
+--  Global Command Function
+-- -----------------------------------------------------------------------
 function executeCommand(command)
 	alert("Execute: "..command, 1);
 	--SendChatMessage(command, "CHANNEL", nil, 1);
@@ -245,6 +381,10 @@ function executeCommand(command)
 	alert("Execution successfull", 1);
 end
 
+
+-- -----------------------------------------------------------------------
+--  Global Debug Function
+-- -----------------------------------------------------------------------
 function alert(msg, level)
 	if level <= debugFlag then
 		print(msg);

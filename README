@@ -30,18 +30,18 @@ Following WoW-clients are supported:             3.x.x
                     =============================
                             Commands
                     =============================
-    20 of 276 implemented (7%).
+    23 of 276 implemented (8%).
     
             +----------------------------+-----------+
             |Command                     |Implemented|
             +----------------------------+-----------+
-            |account                     |           |
+            |account                     |    yes    |
             |account create              |           |
             |account delete              |           |
             |account lock                |           |
             |account onlinelist          |           |
             |account password            |           |
-            |account set addon           |           |
+            |account set addon           |    yes    |
             |account set gmlevel         |           |
             |account set password        |           |
             |additem                     |           |
