@@ -151,8 +151,94 @@
 					</Anchor>
 				</Anchors>
 				<Frames>
+					<Button name="DropDownMenuPlayerWho" inherits="UIDropDownMenuTemplate">
+						<Anchors>
+							<Anchor point="TOPLEFT">
+								<Offset x="130" y="0" />
+							</Anchor>
+						</Anchors>
+						<Scripts>
+							<OnLoad>
+								UIDropDownMenu_Initialize(self, DropDownMenuPlayerWho_OnLoad);
+							</OnLoad>
+						</Scripts>
+					</Button>
+					<EditBox name="EditBoxPlayerLevelUpDown" inherits="InputBoxTemplate">
+						<Size>
+							<AbsDimension x="40" y="23" />
+						</Size>
+						<Anchors>
+							<Anchor point="TOPLEFT">
+								<Offset x="150" y="-27" />
+							</Anchor>
+						</Anchors>
+						<Scripts>
+							<OnLoad>
+								self:SetAutoFocus(false);
+								self:ClearFocus();
+							</OnLoad>
+							<OnEnterPressed>
+								ButtonPlayerLevelUpDown:Click();
+							</OnEnterPressed>
+						</Scripts>
+					</EditBox>
+					<Button name="DropDownMenuPlayerLevelUpDown" inherits="UIDropDownMenuTemplate">
+						<Anchors>
+							<Anchor point="TOPLEFT">
+								<Offset x="190" y="-25" />
+							</Anchor>
+						</Anchors>
+						<Scripts>
+							<OnLoad>
+								UIDropDownMenu_Initialize(self, DropDownMenuPlayerLevelUpDown_OnLoad);
+							</OnLoad>
+						</Scripts>
+					</Button>
+					<Button name="ButtonPlayerLevelUpDown" inherits="UIPanelButtonTemplate" text="Speichern">
+						<Size>
+							<AbsDimension x="100" y="23" />
+						</Size>
+						<Anchors>
+							<Anchor point="TOPRIGHT">
+								<Offset x="0" y="-25" />
+							</Anchor>
+						</Anchors>
+						<Scripts>
+							<OnEnter>
+								MouseOverShow(self);
+							</OnEnter>
+							<OnLeave>
+								MouseOverHide(self);
+							</OnLeave>
+							<OnClick>
+								ButtonPlayerLevelUpDown_OnClick()
+							</OnClick>
+						</Scripts>
+					</Button>
 				</Frames>
 				<Layers>
+					<Layer>
+						<FontString name="FontStringAccountExtension" inherits="GameFontNormal" justifyH="LEFT" text="Charakter">
+							<Size>
+								<AbsDimension x="150" y="20" />
+							</Size>
+							<Anchors>
+								<Anchor point="TOPLEFT">
+									<Offset x="0" y="0" />
+								</Anchor>
+							</Anchors>
+						</FontString>
+						<FontString name="FontStringAccountExtension" inherits="GameFontNormal" justifyH="LEFT" text="Level">
+							<Size>
+								<AbsDimension x="150" y="20" />
+							</Size>
+							<Anchors>
+								<Anchor point="TOPLEFT">
+									<Offset x="0" y="-25" />
+								</Anchor>
+							</Anchors>
+						</FontString>
+					</Layer>
 				</Layers>
 			</Frame>
 			<Frame name="TabAccount" hidden="true" enableMouse="true">

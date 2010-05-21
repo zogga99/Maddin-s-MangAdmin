@@ -3,5 +3,5 @@
 ## Title: MaddinsMangAdmin
 ## Notes: Manages a mangos-server
 ## Notes-deDE: Verwaltet einen Mangos-Server
-## Version: 2010.05.18
+## Version: 2010.05.21
 Frame.xml

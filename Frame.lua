@@ -2,8 +2,37 @@
 -- use "/maddinsmangadmin debug" for debug-informations
 -- use "/maddinsmangadmin debug_extended" for extended debug-informations
 
-version = "2010.05.18";
+version = "2010.05.21";
 debugFlag = 0;
+--init = {};
+
+PlayerWho = {
+	["self"] = {
+		["text"] = "eigener Charakter"
+	},
+	["choose"] = {
+		["text"] = "ausgewählter Charakter"
+	}
+};
+
+PlayerWhoOrder = {
+	"self",
+	"choose"
+};
+
+PlayerLevel = {
+	["up"] = {
+		["text"] = "aufsteigen"
+	},
+	["down"] = {
+		["text"] = "absteigen"
+	}
+};
+
+PlayerLevelOrder = {
+	"up",
+	"down"
+};
 
 reloadTables = {
 	["all"] = {
@@ -133,6 +162,8 @@ function showMainFrame()
 	
 	ButtonHide.tooltipText = "Schließt das Fenster";
 	
+	ButtonPlayerLevelUpDown.tooltipText = "Speichert die Änderungen sodass der Charakter auf- oder absteigt";
+	
 	ButtonAccountExtensionSave.tooltipText = "Speichert die ausgewählte Erweiterung";
 	ButtonAccountGmLevelShow.tooltipText = "Zeigt die aktuelle Berechtigungsstufe an";
 	
@@ -198,6 +229,84 @@ function ButtonTabServer_OnClick()
 	PanelTemplates_SelectTab(ButtonTabServer);
 end
 
+
+-- -----------------------------------------------------------------------
+-- Player
+-- -----------------------------------------------------------------------
+function DropDownMenuPlayerWho_OnLoad()
+	UIDropDownMenu_SetWidth(DropDownMenuPlayerWho, 150, 0);
+	for key, subarray in pairs(PlayerWhoOrder) do
+		info		= {};
+		info.text	= PlayerWho[PlayerWhoOrder[key]].text;
+		info.value	= PlayerWhoOrder[key];
+		info.func	= DropDownMenuPlayerWho_Selected;
+		UIDropDownMenu_AddButton(info);
+	end
+end
+
+function DropDownMenuPlayerWho_Selected(element)
+	UIDropDownMenu_SetSelectedValue(DropDownMenuPlayerWho, element.value);
+end
+
+function DropDownMenuPlayerLevelUpDown_OnLoad()
+	UIDropDownMenu_SetWidth(DropDownMenuPlayerLevelUpDown, 90, 0);
+	for key, subarray in pairs(PlayerLevelOrder) do
+		info		= {};
+		info.text	= PlayerLevel[PlayerLevelOrder[key]].text;
+		info.value	= PlayerLevelOrder[key];
+		info.func	= DropDownMenuPlayerLevel_Selected;
+		UIDropDownMenu_AddButton(info);
+	end
+end
+
+function DropDownMenuPlayerLevel_Selected(element)
+	UIDropDownMenu_SetSelectedValue(DropDownMenuPlayerLevelUpDown, element.value);
+end
+
+function ButtonPlayerLevelUpDown_OnClick()
+	if CheckPlayerWhoSelected() then
+		if EditBoxPlayerLevelUpDown:GetText() ~= "" then
+			if UIDropDownMenu_GetSelectedValue(DropDownMenuPlayerLevelUpDown) then
+				local command = ".levelup "..GetPlayerWhoSelected();
+				if UIDropDownMenu_GetSelectedValue(DropDownMenuPlayerLevelUpDown) == "up" then
+					command = command.." ";
+				else
+					command = command.." -";
+				end
+				command = command..EditBoxPlayerLevelUpDown:GetText();
+				executeCommand(command);
+			else
+				alert("levelup or leveldown not selected", 1);
+			end
+		else
+			alert("no level entered", 1);
+		end
+	else
+		alert("no player selected", 1);
+	end
+	EditBoxPlayerLevelUpDown:SetText("");
+	EditBoxPlayerLevelUpDown:ClearFocus();
+end
+
+function CheckPlayerWhoSelected()
+	if UIDropDownMenu_GetSelectedValue(DropDownMenuPlayerWho) then
+		return true;
+	else
+		if UnitName("target") then
+			return true;
+		else
+			return false;
+		end
+	end
+end
+
+function GetPlayerWhoSelected()
+	if UIDropDownMenu_GetSelectedValue(DropDownMenuPlayerWho) == "self" then
+		return UnitName("player");
+	else
+		return UnitName("target");
+	end
+end
 
 -- -----------------------------------------------------------------------
 --  Account

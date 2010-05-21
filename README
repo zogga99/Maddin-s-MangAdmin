@@ -30,7 +30,7 @@ Following WoW-clients are supported:             3.x.x
                     =============================
                             Commands
                     =============================
-    23 of 276 implemented (8%).
+    24 of 276 implemented (9%).
     
             +----------------------------+-----------+
             |Command                     |Implemented|
@@ -148,7 +148,7 @@ Following WoW-clients are supported:             3.x.x
             |learn all_myspells          |           |
             |learn all_mytalents         |           |
             |learn all_recipes           |           |
-            |levelup                     |           |
+            |levelup                     |    yes    |
             |linkgrave                   |           |
             |list creature               |           |
             |list item                   |           |
